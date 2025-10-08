@@ -1,28 +1,30 @@
 {
-    "name": "next-netlify-platform-starter",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@netlify/blobs": "^8.2.0",
-        "blobshape": "^1.0.0",
-        "bright": "^0.8.5",
-        "markdown-to-jsx": "^7.4.5",
-        "next": "15.5.2",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
-        "unique-names-generator": "^4.7.1"
-    },
-    "devDependencies": {
-        "@tailwindcss/postcss": "^4.0.15",
-        "eslint": "8.57.1",
-        "eslint-config-next": "15.5.2",
-        "postcss": "^8.4.36",
-        "tailwindcss": "^4.0.15"
-    }
+  "name": "modular-crm-hosting",
+  "version": "1.0.0",
+  "description": "Modular CRM/Hosting SaaS & Self-Hosting Platform",
+  "main": "apps/backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "backend:dev": "cd apps/backend && npm run dev",
+    "frontend:dev": "cd apps/frontend && npm start",
+    "build": "npm run backend:build && npm run frontend:build",
+    "backend:build": "cd apps/backend && npm run build",
+    "frontend:build": "cd apps/frontend && npm run build",
+    "start": "cd apps/backend && npm start",
+    "install:all": "npm install && cd apps/backend && npm install && cd ../frontend && npm install",
+    "db:migrate": "cd apps/backend && npm run db:migrate",
+    "db:seed": "cd apps/backend && npm run db:seed"
+  },
+  "keywords": ["crm", "hosting", "saas", "self-hosting", "modular"],
+  "author": "Marcell",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "netlify-cli": "^15.0.0"
+  }
 }
