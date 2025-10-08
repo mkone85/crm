@@ -4,16 +4,10 @@
   "description": "Modular CRM/Hosting SaaS & Self-Hosting Platform",
   "main": "apps/backend/server.js",
   "scripts": {
-    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
-    "backend:dev": "cd apps/backend && npm run dev",
-    "frontend:dev": "cd apps/frontend && npm start",
-    "build": "npm run backend:build && npm run frontend:build",
-    "backend:build": "cd apps/backend && npm run build",
-    "frontend:build": "cd apps/frontend && npm run build",
-    "start": "cd apps/backend && npm start",
-    "install:all": "npm install && cd apps/backend && npm install && cd ../frontend && npm install",
-    "db:migrate": "cd apps/backend && npm run db:migrate",
-    "db:seed": "cd apps/backend && npm run db:seed"
+    "dev": "cd apps/frontend && npm start",
+    "build": "cd apps/frontend && npm run build",
+    "start": "netlify dev",
+    "install:all": "npm install && cd apps/frontend && npm install"
   },
   "keywords": ["crm", "hosting", "saas", "self-hosting", "modular"],
   "author": "Marcell",
